@@ -14,11 +14,33 @@ class Location(models.Model):
     return self.location
 
 class Image(models.Model):
-  image = models.ImageField(upload_to = 'photos')
+  image = models.ImageField(upload_to = 'photos/')
   image_name = models.CharField(max_length=60)
   image_description = models.TextField()
-  category = models.ForeignKey(Category)
+  pub_date = models.DateTimeField(auto_now_add=True)
+  category = models.ManyToManyField(Category)
   location = models.ForeignKey(Location)
+
+  @classmethod
+  def all_images(cls):
+    images = cls.objects.all()
+    return images
+
+  def save_image(self):
+    self.save()
+
+  def del_image(self):
+    self.delete()
+
+  @classmethod
+  def search_image(cls, search):
+    image = cls.objects.filter(category=search)
+    return image
+
+  @classmethod
+  def filter_images(cls, location):
+    image = cls.objects.filter(location=location)
+    return image
 
   def __str__(self):
     return self.image_name
