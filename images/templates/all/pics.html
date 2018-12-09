@@ -9,7 +9,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       {% for pic in pics %}
-      <img data-toggle="modal" data-target="#myModal" class='uploads' src="{{pic.image.url}}" alt="Picture">
+      <img onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}")' class='uploads' src="{{pic.image.url}}"
+  alt="Picture">
     </div>
   </div>
 </div>
@@ -22,10 +23,10 @@
           <h4 style='text-align:center;' class="modal-title">Image Details</h4>
         </div>
         <div class="modal-body">
-          <p><span style='font-weight:bold;'>Title:</span> {{pic.image_name}}</p>
-          <p><span style='font-weight:bold;'>Description:</span> {{pic.image_description}}</p>
-          <p><span style='font-weight:bold;'>Date Published:</span> {{pic.pub_date}}</p>
-          <p><span style='font-weight:bold;'>Taken In:</span> {{pic.location}}</p>
+          <p><span style='font-weight:bold;'>Title:</span><h6 id='title'></h6></p>
+          <p><span style='font-weight:bold;'>Description:</span><h6 id='description'></h6></p>
+          <p><span style='font-weight:bold;'>Date Published:</span><h6 id='pub_date'></h6></p>
+          <p><span style='font-weight:bold;'>Taken In:</span><h6 id='location'></h6></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -24,3 +24,11 @@ if ($('#back-to-top').length) {
     }, 700);
   });
 }
+
+function showModal(title, description, pub_date, location){
+  $("#myModal #title").html(title)
+  $("#myModal #description").html(description)
+  $("#myModal #pub_date").html(pub_date)
+  $("#myModal #location").html(location)
+  $("#myModal").modal();
+}
