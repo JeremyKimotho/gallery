@@ -44,6 +44,14 @@ class Image(models.Model):
   def del_image(self):
     self.delete()
 
+  def get_image(self, id):
+    image = Image.objects.get(pk=id)
+    return image
+
+  def update_image(self, id, updated_name):
+    image = Image.objects.filter(pk=id).update(image_name=updated_name)
+    return image.save_image()
+
   @classmethod
   def search_image(cls, search):
     image = cls.objects.filter(category=search)
