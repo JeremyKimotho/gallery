@@ -1,0 +1,36 @@
+#main {
+  background-color: black;
+  height: 80px;
+}
+
+#icon {
+  margin-top: -10px;
+  width: 70px;
+  height: 70px;
+}
+
+#search {
+  margin-top: 20px;
+}
+
+#searchButton {
+  margin-top: 0px;
+  border: none;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  font-family: Roboto,
+    sans-serif;
+  height: 34px;
+}
+
+#searchButton:hover {
+  margin-top: 0px;
+  height: 34px;
+  border: none;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  font-family: Roboto,
+    sans-serif;
+}
