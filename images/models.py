@@ -63,5 +63,5 @@ class Image(models.Model):
     return image
 
   def __str__(self):
-    return self.image_name
+    return self.image.url
 

@@ -1,23 +1,53 @@
 {% extends 'all/base.html' %}
 
+
 {% block content %}
 {{block.super}}
 
-<div class="container">
-  {% for pic in pics %}
-  <div class="row">
-    <div class="col-lg-4">
-      <img src="{{pic}}" class='img-responsive' alt="Pic">
-      <h1>{{pic}}</h1>
-    </div>
+{% for pic in pics %}
+<div class="row">
+  <div class='col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+      <img onclick="document.getElementById('details').style.display='block'" class='uploads' src="{{pic.image.url}}" alt="Picture">
   </div>
-  {% empty %}
-  <div class="row">
-    <h2>There ain't shit to show</h2>
-  </div>
-  {% endfor %}
 </div>
 
-<h1>hijwcevf eijnbgnvcom</h1>
+<div class="container">
+  <div id="details">
+    <span onclick="document.getElementById('details').style.display='none'">&times;</span>
+    <p>{{pic.image_name}}</p>
+    <p>{{pic.image_description}}</p>
+    <p>{{pic.pub_date}}</p>
+    <p>{{pic.location}}</p>
+  </div>
+</div>
 
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endfor %}
 {% endblock %}
