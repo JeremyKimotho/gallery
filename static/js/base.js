@@ -25,10 +25,23 @@ if ($('#back-to-top').length) {
   });
 }
 
-function showModal(title, description, pub_date, location){
+function showModal(title, description, pub_date, location, image_link){
   $("#myModal #title").html(title)
   $("#myModal #description").html(description)
   $("#myModal #pub_date").html(pub_date)
   $("#myModal #location").html(location)
+  $("#myModal #link").html(image_link)
   $("#myModal").modal();
 }
+
+function copyToClipboard(str){
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};

@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       {% for pic in pics %}
-      <img onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}")' class='uploads' src="{{pic.image.url}}"
+      <img onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}", "{{pic.image.url}}")' class='uploads' src="{{pic.image.url}}"
   alt="Picture">
     </div>
   </div>
@@ -23,11 +23,12 @@
           <h4 style='text-align:center;' class="modal-title">Image Details</h4>
         </div>
         <div class="modal-body">
+          <p><a href='copyToClipboard()'>Copy Image Link</a></p>
           <p><span style='font-weight:bold;'>Title:</span><h6 id='title'></h6></p>
           <p><span style='font-weight:bold;'>Description:</span><h6 id='description'></h6></p>
           <p><span style='font-weight:bold;'>Date Published:</span><h6 id='pub_date'></h6></p>
           <p><span style='font-weight:bold;'>Taken In:</span><h6 id='location'></h6></p>
-          <p id='link'><a></a></p>
+          <textarea id="image_link"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
