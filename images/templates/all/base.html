@@ -1,0 +1,25 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jallery</title>
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="">
+  <link rel="shortcut icon" href="../../../media/photos/icon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  {% endblock %}
+</head>
+<body>
+  {% include 'navbar.html' %}
+  {% block content %}
+  <h1 id='headliner' class='text-center'>Jallery</h1>
+  {% endblock %}
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+  {% endblock %}
+</body>
+</html>

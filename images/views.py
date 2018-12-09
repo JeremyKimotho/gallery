@@ -3,5 +3,5 @@ import datetime as dt
 from .models import Image
 from django.http import HttpResponse, Http404
 
-def welcome(request):
-  return render(request, 'welcome.html')
+def default(request):
+  return render(request, 'all/pics.html')
