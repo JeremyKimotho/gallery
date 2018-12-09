@@ -54,13 +54,13 @@ class Image(models.Model):
 
   @classmethod
   def search_image(cls, search):
-    image = cls.objects.filter(category=search)
+    image = cls.objects.filter(category__category=search)
     return image
 
   @classmethod
-  def filter_images(cls, location):
-    image = cls.objects.filter(location=location)
-    return image
+  def filter_images(cls, place):
+    images = cls.objects.filter(location__location=place)
+    return images
 
   def __str__(self):
     return self.image.url

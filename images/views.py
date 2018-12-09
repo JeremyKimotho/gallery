@@ -8,4 +8,25 @@ def default(request):
   print(pics)
   return render(request, 'all/pics.html', {'pics':pics})
 
+def filter_usa(request):
+  pics = Image.filter_images('USA')
+  return render(request, 'all/search.html', {'pics':pics})
+
+def filter_germany(request):
+  pics = Image.filter_images('Germany')
+  return render(request, 'all/search.html', {'pics':pics})
+
+def filter_italy(request):
+  pics = Image.filter_images('Italy')
+  return render(request, 'all/search.html', {'pics':pics})
+
+def filter_brazil(request):
+  pics = Image.filter_images('Brazil')
+  return render(request, 'all/search.html', {'pics':pics})
+
+def filter_kenya(request):
+  pics = Image.filter_images('Kenya')
+  return render(request, 'all/search.html', {'pics':pics})
+
+
 
