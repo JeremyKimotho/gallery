@@ -33,11 +33,6 @@ class Image(models.Model):
   category = models.ManyToManyField(Category)
   location = models.ForeignKey(Location)
 
-  @classmethod
-  def all_images(cls):
-    images = cls.objects.all()
-    return images
-
   def save_image(self):
     self.save()
 
@@ -51,6 +46,11 @@ class Image(models.Model):
   def update_image(self, id, updated_name):
     image = Image.objects.filter(pk=id).update(image_name=updated_name)
     return image.save_image()
+
+  @classmethod
+  def all_images(cls):
+    images = cls.objects.all()
+    return images
 
   @classmethod
   def search_image(cls, search):

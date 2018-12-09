@@ -25,8 +25,8 @@ html {
   font-family: 'Montserrat',
   sans-serif;
   opacity: 0;
-  -webkit-animation: reveal 6s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
-  animation: reveal 6s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+  -webkit-animation: reveal 3s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+  animation: reveal 3s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
 }
 
 @keyframes reveal {

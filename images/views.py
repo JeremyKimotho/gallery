@@ -4,4 +4,8 @@ from .models import Image, Location, Category
 from django.http import HttpResponse, Http404
 
 def default(request):
-  return render(request, 'all/pics.html')
+  pics = Image.all_images()
+  print(pics)
+  return render(request, 'all/pics.html', {'pics':pics})
+
+
