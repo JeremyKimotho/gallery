@@ -5,13 +5,13 @@
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="{% static 'css/nav.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/nav.css' %}">
 </head>
 <body>
   <nav id='main' class='navbar navbar-inverse'>
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class='navbar-brand' href=""><img id='icon' src="../../media/photos/icon.png" alt="de icon"></a>
+        <a class='navbar-brand' href="{% url 'default' %}"><img id='icon' src="../../media/photos/icon.png" alt="de icon"></a>
       </div>
       <!-- Adding a search form -->
       <div class="col-sm-4">
