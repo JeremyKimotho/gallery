@@ -1,14 +1,26 @@
 from django.db import models
-import datetimeas as dt
+import datetime as dt
 
 class Category(models.Model):
   category = models.TextField()
+
+  def save_category(self):
+    self.save()
+
+  def del_category(self):
+    self.delete()
 
   def __str__(self):
     return self.category
 
 class Location(models.Model):
   location = models.TextField()
+
+  def save_location(self):
+    self.save()
+
+  def del_location(self):
+    self.delete()
 
   def __str__(self):
     return self.location
