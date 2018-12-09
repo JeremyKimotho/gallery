@@ -5,8 +5,8 @@
 {% block content %}
 {{block.super}}
 
-<div class="container">
-  <div class="row">
+<div class="grid">
+  <div class="grid-item">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       {% for pic in pics %}
       <img onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}", "{{pic.image.url}}")' class='uploads' src="{{pic.image.url}}"
@@ -37,6 +37,10 @@
     </div>
   </div>
 </div>
+
+{% block scripts %}
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+{% endblock %}
 
 {% endfor %}
 {% endblock %}

@@ -45,3 +45,8 @@ function copyToClipboard(str){
   document.execCommand('copy');
   document.body.removeChild(el);
 };
+
+$('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
