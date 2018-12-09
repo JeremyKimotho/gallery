@@ -7,17 +7,24 @@
   <title>Jallery</title>
   {% block styles %}
   {% bootstrap_css %}
-    <link rel="shortcut icon" href="../../../media/photos/icon.png" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="shortcut icon" href="../../../media/photos/title.png" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   {% endblock %}
 </head>
 <body>
-  {% include 'navbar.html' %}
+  <div class="bg">
+    <div class="container">
+      {% include 'navbar.html' %}
+      <h1 id='headliner' class='text-center'>Jallery</h1>
+    </div>
+  </div>
   {% block content %}
-  <h1 id='headliner' class='text-center'>Jallery</h1>
   {% endblock %}
   {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../../../static/js/base.js"></script>
   {% bootstrap_javascript %}
   {% endblock %}
 </body>

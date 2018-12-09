@@ -1,0 +1,52 @@
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  background-image: url("../../media/photos/background.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position:fixed;
+  background-color: black;
+  height: 80px;
+  border-radius:0px;
+  width:100%;
+}
+
+#headliner{
+  font-size:200px;
+  color:white;
+  font-family: 'Montserrat',
+  sans-serif;
+  opacity: 0;
+  -webkit-animation: reveal 6s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+  animation: reveal 6s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+#headliner {
+  display: block;
+}

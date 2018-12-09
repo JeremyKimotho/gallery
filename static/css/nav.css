@@ -1,7 +1,8 @@
 #main {
   background-color: black;
-  background-color:red;
   height: 80px;
+  border-radius:0px;
+  overflow: hidden;
 }
 
 #icon {
@@ -10,10 +11,12 @@
   height: 70px;
 }
 
-#search {
-  margin-top: 20px;
+.col-sm-4{
+  margin-top: 13px;
+  position: absolute;
+  right: 0px;
+  padding: 10px;
 }
-
 #searchButton {
   margin-top: 0px;
   border: none;
