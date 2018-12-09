@@ -28,5 +28,11 @@ def filter_kenya(request):
   pics = Image.filter_images('Kenya')
   return render(request, 'all/search.html', {'pics':pics})
 
+def search(request):
+  if 'location' in request.GET and request.GET['location']:
+    search_term = request.GET.get('location')
+    searched_pics = Image.search_image(search_term)
+    return render(request, 'all/search.html', {'pics':searched_pics})
 
-
+  else:
+    return render(request, 'all/search.html', {'message':message})

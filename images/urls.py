@@ -9,7 +9,8 @@ urlpatterns=[
   url('^filter-germany$', views.filter_germany, name='filter-germany'),
   url('^filter-italy$', views.filter_italy, name='filter-italy'),
   url('^filter-brazil$', views.filter_brazil, name='filter-brazil'),
-  url('^filter-kenya$', views.filter_kenya, name='filter-kenya')
+  url('^filter-kenya$', views.filter_kenya, name='filter-kenya'),
+  url('^search$', views.search, name='search')
 ]
 
 if settings.DEBUG:

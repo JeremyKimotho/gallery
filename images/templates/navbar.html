@@ -20,9 +20,9 @@
       </div>
       <!-- Adding a search form -->
       <div class="col-sm-4">
-        <form id='search' class='navbar-right' class='navbar-form' role='search' action="">
+        <form id='search' class='navbar-right' class='navbar-form' role='search' action="{% url 'search' %}">
           <div class="input-group">
-            <input type="text" class='form-control' placeholder="Search Category" name='location'>
+            <input autocomplete='off' type="text" class='form-control' placeholder="Search Category" name='location'>
             <div class="input-group-btn">
               <button id='searchButton' class='btn btn-default' type='submit'>Search</button>
             </div>
