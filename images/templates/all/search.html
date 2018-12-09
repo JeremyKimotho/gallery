@@ -5,7 +5,17 @@
     {% if pics %}
     <h2 style='text-align:center;'>Found {{pics|length }}</h2>
     {% else %}
-    <h2 style='text-align:center;'>There are no such pictures</h2>
+    <h2 style='text-align:center;'>There are no such pictures. You will be redirected to the main page in: <span id="counter">7</span></h2>
+    <script>
+      setInterval(function () {
+        var div = document.querySelector("#counter");
+        var count = div.textContent * 1 - 1;
+        div.textContent = count;
+        if (count <= 0) {
+          window.location.replace("{% url 'default' %}");
+        }
+      }, 1000);
+    </script>
     {% endif %}
   </div>
   <div class="row">
