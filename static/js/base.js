@@ -21,7 +21,7 @@ if ($('#back-to-top').length) {
     e.preventDefault();
     $('html,body').animate({
       scrollTop: 0
-    }, 700);
+    }, 1000);
   });
 }
 

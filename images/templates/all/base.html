@@ -5,6 +5,9 @@
 <head>
   <meta charset="utf-8">
   <title>Jallery</title>
+  {% block scripts1 %}
+  <script src="../../../static/js/masonry.js"></script>
+  {% endblock %}
   {% block styles %}
   {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -27,6 +30,20 @@
   {% block scripts %}
   <script src="../../../static/js/jquery-3.3.1.js"></script>
   <script src="../../../static/js/base.js"></script>
+  <script>
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+    // options
+    itemSelector: '.grid-item',
+    columnWidth: 200
+    });
+
+    // element argument can be a selector string
+    // for an individual element
+    var msnry = new Masonry( '.grid', {
+    // options
+    });
+  </script>
   {% bootstrap_javascript %}
   {% endblock %}
 </body>
