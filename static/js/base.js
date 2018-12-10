@@ -30,7 +30,7 @@ function showModal(title, description, pub_date, location, image_link){
   $("#myModal #description").html(description)
   $("#myModal #pub_date").html(pub_date)
   $("#myModal #location").html(location)
-  $("#myModal #link").html(image_link)
+  $("#myModal img").attr('src', image_link)
   $("#myModal").modal();
 }
 
@@ -46,7 +46,16 @@ function copyToClipboard(str){
   document.body.removeChild(el);
 };
 
-$('.grid').masonry({
-  itemSelector: '.grid-item',
-  columnWidth: 200
-});
+function closeModal(){
+ $('.modal').on('hide.bs.modal', function (e) {
+   $('.modal .modal-dialog').attr('class', 'modal-dialog  zoomOut slower  animated');
+ }) 
+}
+$('.modal').on('show.bs.modal', function (e) {
+  $('.modal .modal-dialog').attr('class', 'modal-dialog  zoomIn  animated');
+})
+
+var modal = document.getElementById('myModal');
+window.onclick = function (event) {
+   closeModal()
+}
