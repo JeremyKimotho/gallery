@@ -5,7 +5,6 @@ from django.http import HttpResponse, Http404
 
 def default(request):
   pics = Image.all_images()
-  print(pics)
   return render(request, 'all/pics.html', {'pics':pics})
 
 def filter_usa(request):
@@ -35,4 +34,4 @@ def search(request):
     return render(request, 'all/search.html', {'pics':searched_pics})
 
   else:
-    return render(request, 'all/search.html', {'message':message})
+    return render(request, 'all/search.html')
