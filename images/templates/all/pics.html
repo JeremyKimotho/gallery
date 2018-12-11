@@ -9,7 +9,7 @@
   {% for pic in pics %}
   <section class='grid-item'>
     <img data-target='#myModal' onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}", "{{pic.image.url}}")'
-    class='uploads' src="{{pic.image.url}}" alt="Picture">
+    class='uploads' class='img-responsive' src="{{pic.image.url}}" alt="Picture">
   </section>
 </div>
 
