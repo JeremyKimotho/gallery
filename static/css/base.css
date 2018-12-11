@@ -31,6 +31,15 @@ html {
   position:relative;
 }
 
+#link{
+  margin-left:100000px;
+}
+
+#trueLink:hover{
+  color:blue;
+  cursor:pointer;
+}
+
 #headliner{
   font-size:200px;
   color:white;

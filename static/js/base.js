@@ -25,20 +25,7 @@ if ($('#back-to-top').length) {
   });
 }
 
-var getUrl = window.location;
-var baseurl = getUrl.origin;
-
-function showModal(title, description, pub_date, location, image_link){
-  $("#myModal #title").html(title)
-  $("#myModal #description").html(description)
-  $("#myModal #pub_date").html(pub_date)
-  $("#myModal #location").html(location)
-  $("#myModal #link").html(baseurl+image_link)
-  $("#myModal img").attr('src', image_link)
-  $("#myModal").modal();
-}
-
-const copyToClipboard = str => {
+function copy(str) {
   const el = document.createElement('textarea');
   el.value = str;
   el.setAttribute('readonly', '');
@@ -48,7 +35,27 @@ const copyToClipboard = str => {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
-};
+}
+
+var getUrl = window.location;
+var baseurl = getUrl.origin;
+
+
+function showModal(title, description, pub_date, location, image_link){
+  $("#myModal #title").html(title)
+  $("#myModal #description").html(description)
+  $("#myModal #pub_date").html(pub_date)
+  $("#myModal #location").html(location)
+  $("#myModal #link").html(baseurl + image_link)
+  $("#myModal input").attr('value', baseurl+image_link)
+  $("#myModal img").attr('src', image_link)
+  $("#myModal").modal();
+}
+
+function copyLink(){
+  var test=document.getElementById('link').value
+  return copy(test)
+}
 
 function closeModal(){
  $('.modal').on('hide.bs.modal', function (e) {
@@ -63,3 +70,4 @@ var modal = document.getElementById('myModal');
 window.onclick = function (event) {
    closeModal()
 }
+
