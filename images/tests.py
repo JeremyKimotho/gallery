@@ -31,12 +31,12 @@ class ImageTestClass(TestCase):
     self.assertTrue(len(images)>0)
 
   def tearDown(self):
-    Editor.objects.all().delete()
+    Image.objects.all().delete()
     
 
-class CategoryTestClass(TestCase):
+class CategoryTestClasss(TestCase):
   def setUp(self):
-    self.jeremy = Category(Category='Jeremy')
+    self.jeremy = Category(category='Jeremy')
 
   def test_instance(self):
     self.assertTrue(isinstance(self.jeremy, Category))
@@ -52,20 +52,3 @@ class CategoryTestClass(TestCase):
     cats = Category.objects.all()
     self.assertTrue(len(cats) == 0)
 
-class LocationTestClass(TestCase):
-  def setUp(self):
-    self.jeremy = Location(Location='Jeremy')
-
-  def test_instance(self):
-    self.assertTrue(isinstance(self.jeremy, Location))
-
-  def test_save_instance(self):
-    self.jeremy.save_location()
-    locs = Category.objects.all()
-    self.assertTrue(len(locs)>0)
-
-  def test_delete_instance(self):
-    self.jeremy.save_location()
-    self.jeremy.del_location()
-    locs = Location.objects.all()
-    self.assertTrue(len(locs) == 0)
