@@ -1,5 +1,9 @@
 {% extends 'all/base.html' %}
+{% load static %}
+
 {% block content %}
+{{block.super}}
+
 <div class="container">
   <div class="row">
     {% if pics %}
@@ -18,14 +22,15 @@
     </script>
     {% endif %}
   </div>
-  <div class="row">
-    {% if pics %}
-    {% for pic in pics %}
-    <div class="col-sm-6 col-md-3">
-      <img src="{{pic.image.url}}" alt="Searched Pic">
-    </div>
-    {% endfor %}
-    {% endif %}
+</div>
+
+<div class="grid">
+  {% if pics %}
+  {% for pic in pics %}
+  <div class="grid-item">
+    <img src="{{pic.image.url}}" alt="Searched Pic">
   </div>
+  {% endfor %}
+  {% endif %}
 </div>
 {% endblock %}

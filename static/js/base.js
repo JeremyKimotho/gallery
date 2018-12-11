@@ -25,16 +25,20 @@ if ($('#back-to-top').length) {
   });
 }
 
+var getUrl = window.location;
+var baseurl = getUrl.origin;
+
 function showModal(title, description, pub_date, location, image_link){
   $("#myModal #title").html(title)
   $("#myModal #description").html(description)
   $("#myModal #pub_date").html(pub_date)
   $("#myModal #location").html(location)
+  $("#myModal #link").html(baseurl+image_link)
   $("#myModal img").attr('src', image_link)
   $("#myModal").modal();
 }
 
-function copyToClipboard(str){
+const copyToClipboard = str => {
   const el = document.createElement('textarea');
   el.value = str;
   el.setAttribute('readonly', '');

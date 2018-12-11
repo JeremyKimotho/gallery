@@ -6,15 +6,11 @@
 {{block.super}}
 
 <div class="grid">
-  <div class="grid-item">
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      {% for pic in pics %}
-      <section class='grid-item' id='uploads'>
-        <img data-target='#myModal' onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}", "{{pic.image.url}}")'
-        class='uploads' src="{{pic.image.url}}" alt="Picture">
-      </section>
-    </div>
-  </div>
+  {% for pic in pics %}
+  <section class='grid-item'>
+    <img data-target='#myModal' onclick='showModal("{{pic.image_name}}", "{{pic.image_description}}", "{{pic.pub_date}}", "{{pic.location}}", "{{pic.image.url}}")'
+    class='uploads' src="{{pic.image.url}}" alt="Picture">
+  </section>
 </div>
 
 <div id='modal-container' class="container">
@@ -25,6 +21,7 @@
           <h4 style='text-align:center;' class="modal-title">Image Details</h4>
         </div>
         <div class="modal-body">
+          <p><span style='font-weight:bold;'>Link:</span><h6 id='link'></h6></p>
           <p><img class='img-responsive' src="" alt="Modal Image"></p>
           <p><span style='font-weight:bold;'>Title:</span><h6 id='title'></h6></p>
           <p><span style='font-weight:bold;'>Description:</span><h6 id='description'></h6></p>
