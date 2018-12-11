@@ -32,6 +32,8 @@ There are no known bugs. However CDN versions of jquery and Masonry are being us
 ## Support and contact details
 Feel free to contact me on jeremykimotho@yahoo.com with any suggestions or questions.
 ## Live Link
+https://kim-jallery.herokuapp.com/
+
 MIT License
 
 Copyright (c) 2018 JeremyKimotho
